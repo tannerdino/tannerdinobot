@@ -1,0 +1,37 @@
+{
+    "2098": {
+        "id": 2098,
+        "name": "Hill giant",
+        "hp": 35,
+        "pray": 15
+    },
+    "10819": {
+        "id": 10819,
+        "name": "Willow",
+        "woodcutting": 67.5
+    },
+    "8195": {
+        "id": 8195,
+        "name": "Bryophyta",
+        "hp": 115,
+        "pray": 15,
+        "bonus": 1.025
+    },
+    "8194": {
+        "id": 8194,
+        "name": "Growthling",
+        "hp": 10
+    },
+    "7416": {
+        "id": 7416,
+        "name": "Obor",
+        "hp": 120,
+        "pray": 15,
+        "bonus": 1.075
+    },
+    "394": {
+        "id": 394,
+        "name": "Rod Fishing spot"
+    }
+    
+}
