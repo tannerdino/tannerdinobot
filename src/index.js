@@ -14,7 +14,7 @@ const {
 	displayCom_Realkc,
     displayCom_LootProgress,
     displayCom_KillCountProgress,
-    displayCom_NewLootInfo,
+    displayCom_XpProgress,
 } = lootDisplayComs;
 
 const { displayCom_Help } = generalDisplayComs;
@@ -145,6 +145,12 @@ function onMessageHandler(target, context, msg, self) {
     if (commandName.startsWith('!kcprogress ')) {
         const timestamp = Math.floor(Date.now()/1000 - commandName.substring(12).trim());
         displayCom_KillCountProgress(target, client, timestamp);
+        return;
+    }
+    // !xpprogress <unixTime>
+    if (commandName.startsWith('!xpprogress ')) {
+        const timestamp = Math.floor(Date.now()/1000 - commandName.substring(12).trim());
+        displayCom_XpProgress(target, client, timestamp);
         return;
     }
 }

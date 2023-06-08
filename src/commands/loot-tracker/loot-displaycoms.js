@@ -3,6 +3,7 @@ const dbUtils = require("../../utils/db-utils.js");
 const permittedObj = require("./permitted-obj.js");
 const timeUtils = require("../../utils/time-utils.js");
 const twitchUtils = require("../../utils/twitch-utils.js");
+const sourceList = require('../../databases/source-list.json');
 
 const {
     getKillCountAfterTimestamp,
@@ -128,12 +129,8 @@ function displayCom_Last(target, client, objName) {
 // Function to calculate real kill counts
 function displayCom_Realkc(target, client) {
     getKillCount((rows) => {
-        const hillGiantRow = rows.find(
-            (row) => row.sourceName === "Hill Giant"
-        );
-        const mossGiantRow = rows.find(
-            (row) => row.sourceName === "Moss Giant"
-        );
+        const hillGiantRow = rows.find((row) => row.sourceName === "Hill Giant");
+        const mossGiantRow = rows.find((row) => row.sourceName === "Moss Giant");
         const oborRow = rows.find((row) => row.sourceName === "Obor");
         const bryophytaRow = rows.find((row) => row.sourceName === "Bryophyta");
 
@@ -191,6 +188,42 @@ function displayCom_KillCountProgress(target, client, timestamp) {
         console.log(message);
     });
   }
+
+  function displayCom_XpProgress(target, client, timestamp) {
+    if (timestamp < 3000000) {
+      timestamp = Math.floor(Date.now() / 1000) - timestamp;
+    }
+  
+    const xpInfo = [];
+  
+    getKillCountAfterTimestamp(timestamp, (info) => {
+      info.forEach((entry) => {
+        const source = sourceList.sources.find((s) => s.name === entry.sourceName && s.hp);
+        if (source) {
+          const combat_xp = source.hp * 4 * entry.killCount * (source.bonus || 1);
+          const hp_xp = Math.round(combat_xp / 3);
+          xpInfo.push({ sourceName: entry.sourceName, combat_xp, hp_xp });
+        }
+      });
+  
+      const formattedInfo = xpInfo
+        .map((entry) => `Combat: ${entry.combat_xp} xp, Hitpoints: ${entry.hp_xp} xp`)
+        .join(", ");
+  
+      const message =
+        xpInfo.length > 0
+          ? `XP gained after ${convertToEST(timestamp)}: ${formattedInfo}`
+          : `No XP gained after ${convertToEST(timestamp)}`;
+  
+      client.say(target, message);
+      console.log(message);
+    });
+  }
+  
+  
+  
+  
+  
   
 
 module.exports = {
@@ -202,4 +235,5 @@ module.exports = {
     displayCom_LootProgress,
     displayCom_Last,
     displayCom_Realkc,
+    displayCom_XpProgress
 };
