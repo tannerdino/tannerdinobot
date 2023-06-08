@@ -1,2 +1,4 @@
 config.json
 mobile-loot-tracker.db
+node_modules/
+package-lock.json
