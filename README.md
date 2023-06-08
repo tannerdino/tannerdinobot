@@ -9,7 +9,7 @@ To use this bot, you need to set up the configuration file `config.json` with th
 - `dbPath`: Enter the path to the game database file (loottracker.db).
 - `clientId`: Enter your Twitch Client ID for API authentication.
 
-## Instructions
+## Variables
 
 1. **Twitch Username:**
    - Create a new account through Twitch, this will be your bot.
@@ -36,10 +36,11 @@ To use this bot, you need to set up the configuration file `config.json` with th
    - Example: `tannerdino`
 
 6. **Game Database Path:**
-   - Enter the path to the game database file (loottracker.db).
+   - Navigate to `C:\Users\NAME\AppData\Local\Jagex\Old School RuneScape\users\`
+   - Look for a folder named with a bunch of numbers.
+   - In this folder you should find the loottracker.db
    - This is the path where the game stores the loot tracker database file.
    - Example: `C:\Users\NAME\AppData\Local\Jagex\Old School RuneScape\users\NUMBERS\loottracker.db`
-   - Make sure to replace NAME and NUMBERS. NUMBERS should be a 22 digit number associated with your account
 
 7. **Twitch Client ID:**
    - Obtain a Twitch Client ID for API authentication.
@@ -49,65 +50,17 @@ To use this bot, you need to set up the configuration file `config.json` with th
    - Create a new application and obtain the Client ID.
    - Example: `hof5gwx0su6owfnys0yan9c87zr6t`
 
-# Config
-
-To use this bot, you need to set up the configuration file `config.json` with the following variables:
-
-- `twitch_username`: Enter your Twitch bot username.
-- `twitch_password`: Enter the password for your Twitch bot account.
-- `twitch_oauth`: Enter the OAuth token for your Twitch bot account.
-- `twitch_channels`: Enter the Twitch channels you want the bot to join, separated by spaces.
-- `dbPath`: Enter the path to the game database file (loottracker.db).
-- `clientId`: Enter your Twitch Client ID for API authentication.
-
-## Instructions
-
-1. **Twitch Username:**
+## Setting up the config
    - Open Command Prompt (cmd) on your computer.
    - Navigate to the directory where you have your bot code and configuration file. For example, if your bot code is located in `C:\MyBot` and the configuration file `config.json` is in that directory, you can navigate to it by running the following command:
      ```
-     cd C:\MyBot
+     cd C:\MyBot\src\config
      ```
    - Copy and paste the following command into cmd and press Enter to create a new `config.json` file:
      ```
      echo { "twitch": { "username": "", "password": "", "oauth": "", "channels": [], "dbPath": "", "clientId": "" } } > config.json
      ```
    - Replace the empty fields (`username`, `password`, `oauth`, `channels`, `dbPath`, and `clientId`) with your desired values.
-   
-2. **Twitch Password and OAuth Token:**
-   - Follow the instructions provided in the previous step to open cmd and navigate to the bot's directory.
-   - Use the following command to set the `twitch_password` and `twitch_oauth` values in the `config.json` file:
-     ```
-     echo { "twitch": { "password": "", "oauth": "" } } > config.json
-     ```
-   - Replace the empty fields (`password` and `oauth`) with the corresponding values for your Twitch bot account.
-
-3. **Twitch Channels:**
-   - Open cmd and navigate to the bot's directory.
-   - Use the following command to set the `twitch_channels` value in the `config.json` file:
-     ```
-     echo { "twitch": { "channels": [] } } > config.json
-     ```
-   - Replace the empty brackets (`[]`) with the Twitch channels you want the bot to join, separated by spaces. For example:
-     ```
-     echo { "twitch": { "channels": ["channel1", "channel2"] } } > config.json
-     ```
-
-4. **Game Database Path:**
-   - Open cmd and navigate to the bot's directory.
-   - Use the following command to set the `dbPath` value in the `config.json` file:
-     ```
-     echo { "twitch": { "dbPath": "" } } > config.json
-     ```
-   - Replace the empty field (`dbPath`) with the path to the game database file (`loottracker.db`).
-
-5. **Twitch Client ID:**
-   - Open cmd and navigate to the bot's directory.
-   - Use the following command to set the `clientId` value in the `config.json` file:
-     ```
-     echo { "twitch": { "clientId": "" } } > config.json
-     ```
-   - Replace the empty field (`clientId`) with your Twitch Client ID for API authentication.
 
 6. Once you have set all the required values in the `config.json` file, you can proceed with running your bot code.
 
