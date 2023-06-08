@@ -3,7 +3,7 @@ const config = require('../config/config.json');
 
 async function getStreamUptime() {
   try {
-    const userLogin = config.twitch.channels[0];
+    const userLogin = config.twitch.channel;
     const clientId = config.twitch.clientId;
     const oauth = config.twitch.oauth;
     const response = await axios.get(`https://api.twitch.tv/helix/streams?user_login=${userLogin}`, {
