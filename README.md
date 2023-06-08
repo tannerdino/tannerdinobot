@@ -54,7 +54,7 @@ To use this bot, you need to set up the configuration file `config.json` with th
    - Open Command Prompt (cmd) on your computer.
    - Navigate to the directory where you have your bot code and configuration file. For example, if your bot code is located in `C:\MyBot` and the configuration file `config.json` is in that directory, you can navigate to it by running the following command:
      ```
-     cd C:\MyBot\src\config
+     cd MyBot\src\config
      ```
    - Copy and paste the following command into cmd and press Enter to create a new `config.json` file:
      ```
@@ -64,5 +64,16 @@ To use this bot, you need to set up the configuration file `config.json` with th
 
 6. Once you have set all the required values in the `config.json` file, you can proceed with running your bot code.
 
-
+## Running the bot
+   - Open Command Prompt (cmd) on your computer.
+   - Navigate to your Twitch bots directory with the command:
+   ```
+   cd MyBot\src
+   ```
+   - Run index.js to start the bot:
+   ```
+   node index.js
+   ```
+   - Command Prompt should relay a message along the lines of `Connected to irc-ws.chat.twitch.tv:443`
+   
 
