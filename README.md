@@ -2,12 +2,12 @@
 
 To use this bot, you need to set up the configuration file `config.json` with the following variables:
 
-- `twitch_username`: Enter your Twitch bot username.
-- `twitch_password`: Enter the password for your Twitch bot account.
-- `twitch_oauth`: Enter the OAuth token for your Twitch bot account.
-- `twitch_channels`: Enter the Twitch channels you want the bot to join, separated by spaces.
-- `dbPath`: Enter the path to the game database file (loottracker.db).
-- `clientId`: Enter your Twitch Client ID for API authentication.
+- `twitch_username`: Twitch bot username or displayname.
+- `twitch_password`: OAuth token for your Twitch Bot account.
+- `twitch_oauth`: OAuth token for your main Twitch account.
+- `twitch_channel`: Twitch channel your Twitch bot will talk in.
+- `dbPath`: Path to the game database file (loottracker.db).
+- `clientId`: Twitch Client ID for API authentication.
 
 ## Variables
 
